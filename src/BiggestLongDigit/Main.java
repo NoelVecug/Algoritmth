@@ -5,13 +5,14 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class Main {
+    // Из массива чисел собрать самое большое
     public static void main(String[] args) {
         int[] digits = {5,4,9,3,5,7,1};
 
         System.out.println(biggestDigit(digits));
-        System.out.println(betterBiggestDigit(digits));
+        System.out.println(coolerBiggestDigit(digits));
     }
-    private static String betterBiggestDigit(int[] digits) {
+    private static String coolerBiggestDigit(int[] digits) {
         return String.join("", Arrays.stream(digits).boxed()
                 .sorted(Collections.reverseOrder())
                 .map(String::valueOf)
@@ -19,10 +20,10 @@ public class Main {
     }
     private static String biggestDigit(int[] digits) {
         Arrays.sort(digits);
-        String newDigit = "";
+        StringBuilder newDigit = new StringBuilder();
         for (int i = digits.length-1; i >= 0; i--) {
-            newDigit += digits[i];
+            newDigit.append(digits[i]);
         }
-        return newDigit;
+        return newDigit.toString();
     }
 }

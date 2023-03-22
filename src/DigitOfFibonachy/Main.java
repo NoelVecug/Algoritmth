@@ -1,4 +1,5 @@
 package DigitOfFibonachy;
+// Вычислить число Фибоначчи
 public class Main {
     private static final int CONST = 10;
     public static void main(String[] args) {
